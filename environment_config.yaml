@@ -117,6 +117,24 @@ attributes:
     description: 'LDAP attribute mapped to enabled/disabled.'
     weight: 66
     type: "text"
+  user_enabled_emulation:
+    value: ''
+    label: 'User enabled emulation'
+    description: 'If set to True then keystone uses alternative method to determine if user is enabled'
+    weight: 66
+    type: "text"
+  user_enabled_emulation_dn:
+    value: ''
+    label: 'User enabled emulation dn'
+    description: 'DN of group entry to hold emulated enabled users'
+    weight: 66
+    type: "text"
+  user_description_attribute:
+    value: 'description'
+    label: 'The LDAP attribute mapped to user descriptions in keysone.'
+    description: 'The LDAP attribute mapped to user descriptions in keystone'
+    weight: 66
+    type: "text"
   group_tree_dn:
     value: 'ou=Groups,dc=example,dc=com'
     label: 'Groups Tree DN'

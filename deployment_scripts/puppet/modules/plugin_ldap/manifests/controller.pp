@@ -24,6 +24,8 @@ class plugin_ldap::controller {
   $user_name_attribute    = $::fuel_settings['ldap']['user_name_attribute']
   $user_pass_attribute    = $::fuel_settings['ldap']['user_pass_attribute']
   $user_enabled_attribute = $::fuel_settings['ldap']['user_enabled_attribute']
+  $user_enabled_emulation = $::fuel_settings['ldap']['user_enabled_emulation']
+  $user_enabled_emulation_dn = $::fuel_settings['ldap']['user_enabled_emulation_dn']
   $additional_domains     = $::fuel_settings['ldap']['additional_domains']
   $ldap_proxy_custom_conf = $::fuel_settings['ldap']['ldap_proxy_custom_conf']
   $ldap_proxy             = $::fuel_settings['ldap']['ldap_proxy']
@@ -109,38 +111,40 @@ class plugin_ldap::controller {
   }
 
   plugin_ldap::keystone { $domain:
-    identity_driver        => $identity_driver,
-    url                    => $url,
-    use_tls                => $tls,
-    ca_chain               => $ca_chain,
-    suffix                 => $suffix,
-    user                   => $user,
-    password               => $password,
-    query_scope            => $query_scope,
-    user_tree_dn           => $user_tree_dn,
-    user_filter            => $user_filter,
-    user_objectclass       => $user_objectclass,
-    user_id_attribute      => $user_id_attribute,
-    user_name_attribute    => $user_name_attribute,
-    user_pass_attribute    => $user_pass_attribute,
-    user_enabled_attribute => $user_enabled_attribute,
-    user_enabled_default   => $user_enabled_default,
-    user_enabled_mask      => $user_enabled_mask,
-    user_allow_create      => $user_allow_create,
-    user_allow_update      => $user_allow_update,
-    user_allow_delete      => $user_allow_delete,
-    group_tree_dn          => $group_tree_dn,
-    group_filter           => $group_filter,
-    group_objectclass      => $group_objectclass,
-    group_id_attribute     => $group_id_attribute,
-    group_name_attribute   => $group_name_attribute,
-    group_member_attribute => $group_member_attribute,
-    group_desc_attribute   => $group_desc_attribute,
-    group_allow_create     => $group_allow_create,
-    group_allow_update     => $group_allow_update,
-    group_allow_delete     => $group_allow_delete,
-    page_size              => $page_size,
-    chase_referrals        => $chase_referrals,
+    identity_driver           => $identity_driver,
+    url                       => $url,
+    use_tls                   => $tls,
+    ca_chain                  => $ca_chain,
+    suffix                    => $suffix,
+    user                      => $user,
+    password                  => $password,
+    query_scope               => $query_scope,
+    user_tree_dn              => $user_tree_dn,
+    user_filter               => $user_filter,
+    user_objectclass          => $user_objectclass,
+    user_id_attribute         => $user_id_attribute,
+    user_name_attribute       => $user_name_attribute,
+    user_pass_attribute       => $user_pass_attribute,
+    user_enabled_attribute    => $user_enabled_attribute,
+    user_enabled_default      => $user_enabled_default,
+    user_enabled_emulation    => $user_enabled_emulation,
+    user_enabled_emulation_dn => $user_enabled_emulation_dn,
+    user_enabled_mask         => $user_enabled_mask,
+    user_allow_create         => $user_allow_create,
+    user_allow_update         => $user_allow_update,
+    user_allow_delete         => $user_allow_delete,
+    group_tree_dn             => $group_tree_dn,
+    group_filter              => $group_filter,
+    group_objectclass         => $group_objectclass,
+    group_id_attribute        => $group_id_attribute,
+    group_name_attribute      => $group_name_attribute,
+    group_member_attribute    => $group_member_attribute,
+    group_desc_attribute      => $group_desc_attribute,
+    group_allow_create        => $group_allow_create,
+    group_allow_update        => $group_allow_update,
+    group_allow_delete        => $group_allow_delete,
+    page_size                 => $page_size,
+    chase_referrals           => $chase_referrals,
   }
 
   service { 'httpd':
