@@ -11,47 +11,47 @@ class plugin_ldap::controller {
     $user_enabled_mask    = 2
   }
 
-  $identity_driver        = 'keystone.identity.backends.ldap.Identity'
-  $ldap_url               = $::fuel_settings['ldap']['url']
-  $suffix                 = $::fuel_settings['ldap']['suffix']
-  $user                   = $::fuel_settings['ldap']['user']
-  $password               = $::fuel_settings['ldap']['password']
-  $query_scope            = $::fuel_settings['ldap']['query_scope']
-  $user_tree_dn           = $::fuel_settings['ldap']['user_tree_dn']
-  $user_filter            = $::fuel_settings['ldap']['user_filter']
-  $user_objectclass       = $::fuel_settings['ldap']['user_objectclass']
-  $user_id_attribute      = $::fuel_settings['ldap']['user_id_attribute']
-  $user_name_attribute    = $::fuel_settings['ldap']['user_name_attribute']
-  $user_pass_attribute    = $::fuel_settings['ldap']['user_pass_attribute']
-  $user_enabled_attribute = $::fuel_settings['ldap']['user_enabled_attribute']
-  $user_enabled_emulation = $::fuel_settings['ldap']['user_enabled_emulation']
+  $identity_driver           = 'keystone.identity.backends.ldap.Identity'
+  $ldap_url                  = $::fuel_settings['ldap']['url']
+  $suffix                    = $::fuel_settings['ldap']['suffix']
+  $user                      = $::fuel_settings['ldap']['user']
+  $password                  = $::fuel_settings['ldap']['password']
+  $query_scope               = $::fuel_settings['ldap']['query_scope']
+  $user_tree_dn              = $::fuel_settings['ldap']['user_tree_dn']
+  $user_filter               = $::fuel_settings['ldap']['user_filter']
+  $user_objectclass          = $::fuel_settings['ldap']['user_objectclass']
+  $user_id_attribute         = $::fuel_settings['ldap']['user_id_attribute']
+  $user_name_attribute       = $::fuel_settings['ldap']['user_name_attribute']
+  $user_pass_attribute       = $::fuel_settings['ldap']['user_pass_attribute']
+  $user_enabled_attribute    = $::fuel_settings['ldap']['user_enabled_attribute']
+  $user_enabled_emulation    = $::fuel_settings['ldap']['user_enabled_emulation']
   $user_enabled_emulation_dn = $::fuel_settings['ldap']['user_enabled_emulation_dn']
-  $additional_domains     = $::fuel_settings['ldap']['additional_domains']
-  $ldap_proxy_custom_conf = $::fuel_settings['ldap']['ldap_proxy_custom_conf']
-  $ldap_proxy             = $::fuel_settings['ldap']['ldap_proxy']
+  $additional_domains        = $::fuel_settings['ldap']['additional_domains']
+  $ldap_proxy_custom_conf    = $::fuel_settings['ldap']['ldap_proxy_custom_conf']
+  $ldap_proxy                = $::fuel_settings['ldap']['ldap_proxy']
 
-  $user_allow_create      = false
-  $user_allow_update      = false
-  $user_allow_delete      = false
+  $user_allow_create         = false
+  $user_allow_update         = false
+  $user_allow_delete         = false
 
-  $group_tree_dn          = $::fuel_settings['ldap']['group_tree_dn']
-  $group_filter           = $::fuel_settings['ldap']['group_filter']
-  $group_objectclass      = $::fuel_settings['ldap']['group_objectclass']
-  $group_id_attribute     = $::fuel_settings['ldap']['group_id_attribute']
-  $group_name_attribute   = $::fuel_settings['ldap']['group_name_attribute']
-  $group_member_attribute = $::fuel_settings['ldap']['group_member_attribute']
-  $group_desc_attribute   = $::fuel_settings['ldap']['group_desc_attribute']
+  $group_tree_dn             = $::fuel_settings['ldap']['group_tree_dn']
+  $group_filter              = $::fuel_settings['ldap']['group_filter']
+  $group_objectclass         = $::fuel_settings['ldap']['group_objectclass']
+  $group_id_attribute        = $::fuel_settings['ldap']['group_id_attribute']
+  $group_name_attribute      = $::fuel_settings['ldap']['group_name_attribute']
+  $group_member_attribute    = $::fuel_settings['ldap']['group_member_attribute']
+  $group_desc_attribute      = $::fuel_settings['ldap']['group_desc_attribute']
 
-  $group_allow_create     = false
-  $group_allow_update     = false
-  $group_allow_delete     = false
+  $group_allow_create        = false
+  $group_allow_update        = false
+  $group_allow_delete        = false
 
-  $page_size              = $::fuel_settings['ldap']['page_size']
-  $chase_referrals        = pick($::fuel_settings['ldap']['chase_referrals'],'False')
+  $page_size                 = $::fuel_settings['ldap']['page_size']
+  $chase_referrals           = pick($::fuel_settings['ldap']['chase_referrals'],'False')
 
-  $domain                 = $::fuel_settings['ldap']['domain']
-  $use_tls                = $::fuel_settings['ldap']['use_tls']
-  $ca_chain               = pick($::fuel_settings['ldap']['ca_chain'], false)
+  $domain                    = $::fuel_settings['ldap']['domain']
+  $use_tls                   = $::fuel_settings['ldap']['use_tls']
+  $ca_chain                  = pick($::fuel_settings['ldap']['ca_chain'], false)
 
 ###############################################################################
 
